@@ -1,1 +1,32 @@
 <p>user-list works!</p>
+<!-- table -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- table -->
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- table -->
+          <tr *ngFor="let user of users$ | async">
+            <!-- table -->
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.active }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
