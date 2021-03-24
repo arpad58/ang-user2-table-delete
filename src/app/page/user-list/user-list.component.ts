@@ -20,4 +20,14 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /* delete */
+  onDelete(user: User): void {
+    alert('Biztos szeretné törölni?');
+    this.userService.delUser(user).subscribe(
+      () => {
+         this.users$ = this.userService.getAll();
+       }
+    );
+  }
+
 }
