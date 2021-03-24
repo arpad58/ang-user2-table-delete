@@ -22,7 +22,7 @@ export class UserListComponent implements OnInit {
 
   /* delete */
   onDelete(user: User): void {
-    alert('Biztos szeretné törölni?');
+    alert('Are you sure you want to delete?');
     this.userService.delUser(user).subscribe(
       () => {
          this.users$ = this.userService.getAll();
