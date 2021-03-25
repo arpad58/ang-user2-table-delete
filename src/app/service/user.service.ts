@@ -8,8 +8,8 @@ import { User } from '../model/user';
 })
 export class UserService {
 
-  /* table */ /* endpoint máshol apiUrl volt megadva */
-  endpoint: string = 'http://localhost:3000/users';
+  /* table */ /* serverAddress máshol apiUrl volt megadva vagy endpoint*/
+  serverAddress: string = 'http://localhost:3000/users';
 
   constructor(
     private http: HttpClient      /* table */
@@ -21,7 +21,7 @@ export class UserService {
    * @returns on observable with all users.
    */
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.endpoint}`);
+    return this.http.get<User[]>(`${this.serverAddress}`);
   }
 
   /**
@@ -29,7 +29,7 @@ export class UserService {
    * The method is: this.http.delete
    */
    delUser(user: User): Observable<User> {
-    return this.http.delete<User>(`${this.endpoint}/${user.id}`);
+    return this.http.delete<User>(`${this.serverAddress}/${user.id}`);
 
   }
 }
