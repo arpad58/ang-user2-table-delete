@@ -11,7 +11,7 @@ import { UserService } from 'src/app/service/user.service';
 export class UserListComponent implements OnInit {
 
   /* table */
-  users$: Observable<User[]> = this.userService.getAll();
+  userList$: Observable<User[]> = this.userService.getAll();
 
   constructor(
     private userService: UserService      /* table */
@@ -25,7 +25,7 @@ export class UserListComponent implements OnInit {
     alert('Are you sure you want to delete?');
     this.userService.delUser(user).subscribe(
       () => {
-         this.users$ = this.userService.getAll();
+         this.userList$ = this.userService.getAll();
        }
     );
   }
