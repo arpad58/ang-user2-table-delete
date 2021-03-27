@@ -11,9 +11,8 @@ export class UserService {
   /* table */ /* serverAddress máshol apiUrl volt megadva vagy endpoint*/
   serverAddress: string = 'http://localhost:3000/users';
 
-  constructor(
-    private http: HttpClient      /* table */
-  ) { }
+    /*table                */
+    constructor(private http: HttpClient) { }
 
   /* table */
   /**
@@ -30,6 +29,5 @@ export class UserService {
    */
    delUser(user: User): Observable<User> {
     return this.http.delete<User>(`${this.serverAddress}/${user.id}`);
-
   }
 }
